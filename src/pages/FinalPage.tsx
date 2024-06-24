@@ -13,19 +13,25 @@ const FinalPage = () => {
           type="text"
           onChange={(e) => setUrl(e.target.value)}
           value={url}
+          style={{ width: "400px" }}
         />
 
-        <a href={url}>
-          <button> a tag link</button>
-        </a>
+        <div>
+          <a href={url} role="button">
+            a tag link 로 이동
+          </a>
+        </div>
+        <div>
+          <Link to={url} replace={true} role="button">
+            react router dom Link - replace 로 이동
+          </Link>
+        </div>
 
-        <Link to={url} replace={true}>
-          <button> react router dom Link - replace </button>
-        </Link>
-
-        <Link to={url} replace={true}>
-          <button> react router dom Link - NON replace </button>
-        </Link>
+        <div>
+          <Link to={url} replace={true} role="button">
+            react router dom Link - NON replace 로 이동
+          </Link>
+        </div>
       </div>
     </Layout>
   );
